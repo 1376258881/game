@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/px-rem-index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body style="width: 15rem; margin-left: auto; margin-right: auto; position: relative;">
+    <div id="app">
+
+    </div>
+    <button class='reset'>复原</button>
+    <script src="./js/index.js"></script>
+    <script>
+        new Puzzle({
+            el:'#app',  //插槽
+            data:{
+                width:10,//宽
+                height:10,//高
+                row:3,         //行数
+                col:3,          //列数
+                puzzleImg:'./pintu.jpg',
+                // isReset:true
+            },
+            success(){
+                // 拼图成功后的回调
+                console.log('拼图成功')
+            }         
+        })
+    </script>
+</body>
+</html>

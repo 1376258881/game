@@ -1,0 +1,112 @@
+*{
+	margin: 0;
+	box-sizing: border-box;	    /*初始化*/
+}
+a{
+	text-decoration: none;	
+}
+#gamestar{ 
+	/*margin: 0 auto;*/
+	width: 480px;
+	height: 480px;
+	border-radius:10px;
+	background-color: #ccc0b3;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -240px;
+	margin-left: -240px;
+}
+.cell{
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	font-size: 40px;
+	background-color: #bbada0;  
+	position: absolute;	
+	
+}
+/*每行间距*/
+div[id^="c0" ]{top: 16px;}
+div[id^="c1" ]{top: 132px;}	
+div[id^="c2" ]{top: 248px;}	
+div[id^="c3" ]{top: 364px;}
+/*每列间距*/
+div[id$="0"]{left: 16px;}
+div[id$="1"]{left: 132px;}
+div[id$="2"]{left: 248px;}
+div[id$="3"]{left: 364px;}
+.score-style{
+	font-size:45px ;
+	width: 480px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	color: #776e65;
+	/*background-color: #;*/
+	position: absolute;
+	left: 50%;
+	top: 15%;
+	margin-left: -240px;	
+}
+
+
+
+.gameover-stly{
+	text-align: center;
+	width: 240px;
+	height: 264px;
+	border: 1px solid #F65E3B;
+	background-color: #FFFFFF;
+	border-radius:5px ;
+	font-family: "微软雅黑";
+    font-size: 40px; 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -132px;	
+    z-index: 1;
+    box-shadow: #F59563 5px 5px 20px;
+}
+
+
+.gameover-background-stly{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(55,55,55,0.5); 	
+	display: none;  /*隐藏样式，如果不加持续刷新时会闪出样式*/
+	
+}
+
+.n2{background-color:#eee3da}
+.n4{background-color:#ede0c8}
+.n8{background-color:#f2b179}
+.n16{background-color:#f59563}
+.n32{background-color:#f67c5f}
+.n64{background-color:#f65e3b}
+.n128{background-color:#edcf72}
+.n256{background-color:#edcc61}
+.n512{background-color:#9c0}
+.n1024{background-color:#33b5e5}
+.n2048{background-color:#09c}
+.n4096{background-color:#a6c}
+.n8192{background-color:#93c}
+.n8,.n16,.n32,.n64,.n128,.n256,.n512,.n1024,.n2048,.n4096,.n8192{color:#fff}
+.n1024,.n2048,.n4096,.n8192{font-size:40px}
+
+
+
+
+
+
+
+
+
+

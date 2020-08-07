@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>连连看</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<center>
+			<div id="whole">
+				<div id="gamePanel" tabindex="0">
+					<div id="pieces">
+					</div>
+				</div>
+				<div id="gameLogo">
+				</div>
+				<div id="scorePanel">
+					<span>分&nbsp;&nbsp;数</span>
+				</div>
+				<div id="score">
+					<span>0</span>
+				</div>
+				<div id="timePanel">
+					<span>时&nbsp;&nbsp;间</span>
+				</div>
+				<div id="time">
+					<span>0</span>
+				</div>
+				<div id="button">
+					<input id="start" type="button" onclick="Start();" value="开始"></input>
+					<input id="reset" type="button" onclick="Reset();"value="重置"></input>
+				</div>				
+			</div>
+		</center>
+		<script type="text/javascript" src="js/map.js"></script>
+		<script type="text/javascript" src="js/piece.js"></script>
+		<script type="text/javascript" src="js/game.js"></script>
+	</body>
+</html>
