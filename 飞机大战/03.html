@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="500"></canvas>
+
+	<img src="video/koala2.jpg" alt="" id="img">
+
+
+	<script>
+		var canvas = document.getElementById("canvas");
+		// var img = document.getElementById("img");
+		// dom中的创建标签的方法
+		// var img = document.createElement("img");
+		// img.src="video/koala2.jpg"
+
+		// img的构造函数，通过new方式直接创建img的dom对象
+		var img = new Image();
+		img.src = "video/koala2.jpg"
+
+		var context = canvas.getContext("2d");
+		// context.drawImage(img,10,10);
+		img.onload = function(){
+			context.drawImage(img,10,10);
+		}
+	</script>
+</body>
+</html>

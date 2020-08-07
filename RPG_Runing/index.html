@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPG Runing</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .btnsArea {
+            display: grid;
+            grid-template-columns: 40px 40px 40px;
+            grid-template-rows: 30px 30px 30px;
+            grid-gap: 10px;
+            /* //间隙 */
+            justify-content: right;
+            /* 在弹性盒对象的 <div> 元素中的各项周围留有空白： */
+            margin: 50px 30px 0 0;
+        }
+
+        .btnsArea li {
+            width: 40px;
+            height: 30px;
+        }
+
+        .btnsArea li input {
+            width: 100%;
+            height: 100%;
+            background: orange;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        img {
+            position: absolute;
+            top: 300px;
+            left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="RPG" src="images/down-0.png" alt="">
+
+    <ul class="btnsArea">
+        <li><input id='lu' type="button" value="左上"></li>
+        <li><input id='up' type="button" value="向上"></li>
+        <li><input id='rightUp' type="button" value="右上"></li>
+        <li><input id='left' type="button" value="向左"></li>
+        <li><input id='stop' type="button" value="停止"></li>
+        <li><input id='right' type="button" value="向右"></li>
+        <li><input id='ld' type="button" value="左下"></li>
+        <li><input id='down' type="button" value="向下"></li>
+        <li><input id='rd' type="button" value="右下"></li>
+    </ul>
+    <script>
+        //1,完成自身的动画
+        var i = 0;
+        var rpgDom = document.getElementById("RPG");
+
+        // // clearInterval(ainimate);
+
+        // //2 完成一个方向的动作
+        var speed = 10;
+        // var rpgRunning = setInterval(function(){
+        //   i++;
+        //   // if (i > 4) {
+        //   //   i = 1;
+        //   // }
+        //   rpgDom.src = "images/down-" + i + ".png";
+        //   i = i % 4;
+        //   rpgDom.style.top = rpgDom.offsetTop + speed +'px';
+
+        // },100)
+
+        var btnsArea = document.getElementsByClassName("btnsArea")[0];
+        var rpgRunning = null;
+        var stopImge = "down";
+
+        btnsArea.addEventListener("click", function (e) {
+            console.log(e.target.id);
+            if (e.target.id == '') {
+                return;
+            }
+            var flage = e.target.id;
+            clearInterval(rpgRunning);
+
+
+            if (flage == 'stop') {
+                clearInterval(rpgRunning);
+                rpgDom.src = "images/" + stopImge + "-" + 0 + ".png";
+                return;
+            }
+            stopImge = flage;
+            /**
+             * 1. 不先点击stop 会报错
+             * 2. 先点击stop 报错 
+             * 
+             */
+            rpgRunning = setInterval(function () {
+                i++;
+                // if (i > 4) {
+                //   i = 1;
+                // }
+                rpgDom.src = "images/" + flage + "-" + i + ".png";
+                i = i % 4;
+
+                switch (flage) {
+                    case "down":
+                        rpgDom.style.top = rpgDom.offsetTop + speed + "px";
+                        break;
+                    case "up":
+                        rpgDom.style.top = rpgDom.offsetTop - speed + "px";
+                        break;
+                    case "left":
+                        rpgDom.style.left = rpgDom.offsetLeft - speed + "px";
+                        break;
+                    case "right":
+                        rpgDom.style.left = rpgDom.offsetLeft + speed + "px";
+                        break;
+                        // 左上
+                    case "lu":
+                        rpgDom.style.top = rpgDom.offsetTop - speed + "px";
+                        rpgDom.style.left = rpgDom.offsetLeft - speed + "px";
+                        break;
+                        //右上
+                    case "rightUp":
+                        rpgDom.style.top = rpgDom.offsetTop - speed + "px";
+                        rpgDom.style.left = rpgDom.offsetLeft + speed + "px";
+                        break;
+
+                        //左下
+                    case "ld":
+                        rpgDom.style.left = rpgDom.offsetLeft - speed + "px";
+                        rpgDom.style.top = rpgDom.offsetTop + speed + "px";
+                        break;
+                        //右下
+                    case "rd":
+                        rpgDom.style.left = rpgDom.offsetLeft + speed + "px";
+                        rpgDom.style.top = rpgDom.offsetTop + speed + "px";
+                        break;
+                }
+
+                // rpgDom.style.top = rpgDom.offsetTop + speed +'px';
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

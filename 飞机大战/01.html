@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 思维导图，保存好源文件，直接增加API篇 -->
+	<!-- 做好博客更新 -->
+	<video src="video/oceans-clip.mp4">
+		和canvas属于一样的，只有当浏览器不支持的时候才会显示里面的内容
+	</video>
+<!-- 
+	支持视频的格式
+		MP4.WEBM ogv -->
+	<!-- 加入说mp4格式的视频文件已经损坏 -->
+	<!-- 
+		atuoplay     自动播放，默认为false
+		controls     播放进度条 ，默认为false
+		poster       视频没有播放的时候默认加载的图片
+	 -->
+
+	<video controls="true" width="1000" height="500" poster="video/oceans-clip.png">
+		<source src="video/oceans-clip.mp4">
+		<source src="video/oceans-clip.ogv"> 
+		<source src="video/oceans-clip.webm">
+	</video>
+
+</body>
+</html>

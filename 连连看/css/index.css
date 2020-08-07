@@ -1,0 +1,134 @@
+body {
+
+	font-size : 16px;
+	font-weight : bold;
+	color : grey;
+
+}
+
+#whole {
+
+	border : 1px double #999999;
+	border-width : 5px;
+	width : 800px;
+	height : 505px;
+	position : relative;
+
+}
+
+#gamePanel {
+	
+	margin: 1px 1px 1px 1px;
+	width : 602px;
+	height : 502px;
+	background : url(../img/background.gif) repeat;
+	position : absolute;
+
+}
+
+#pieces {
+
+	margin-top : 35px;
+	border : 1px solid #999999;
+	width : 546px;
+	height : 434px;
+	position: relative;
+
+}
+
+#pieces .piece {
+
+	width : 32px;
+	height : 36px;
+	position : relative;
+	cursor : pointer;
+	float : left;
+
+}
+
+#pieces .track {
+
+	width : 32px;
+	height : 36px;
+	position : relative;
+	float : left;
+
+}
+
+#pieces .track2 {
+
+	width : 32px;
+	height : 36px;
+	position : relative;
+	float : left;
+	background : red;
+
+}
+
+#gameLogo {
+	
+	margin-top : 60px;
+	border : 1px solid #999999;
+	left : 607px;
+	width : 187px;
+	height : 73px;
+	background : url(../img/logo.gif);
+	position: absolute;
+
+}
+
+#scorePanel {
+
+	border : 1px solid #999999;
+	left : 607px;
+	top : 200px;
+	width : 187px;
+	height : 30px;
+	position : absolute;
+
+}
+
+#score {
+
+	border : 1px solid #999999;
+	left : 607px;
+	top : 240px;
+	width : 187px;
+	height : 30px;
+	position : absolute;
+
+}
+
+#timePanel {
+
+	border : 1px solid #999999;
+	left : 607px;
+	top : 300px;
+	width : 187px;
+	height : 30px;
+	position : absolute;
+
+}
+
+#time {
+
+	border : 1px solid #999999;
+	left : 607px;
+	top : 340px;
+	width : 187px;
+	height : 30px;
+	position : absolute;
+
+}
+
+#button {
+
+	border : 1px solid #999999;
+	left : 607px;
+	top : 400px;
+	width : 187px;
+	height : 30px;
+	position : absolute;
+
+
+}

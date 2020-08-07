@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 在画布中，图片怎么动 -->
+	<!-- 通过定时器，不停的绘制 -->
+	<!-- 不停的清空画布，重新绘制。 -->
+	
+
+	<!-- 飞机应该怎么动 -->
+	<!-- 控制绘制的坐标
+	进行不停的清空。绘制 -->
+	<canvas id="canvas" width="300" height="400"></canvas>
+
+
+	<script>
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext("2d");
+
+		var img = new Image();
+		img.src = "images/enemy1.png";
+
+		var y = 0;
+		function drawImage(){
+			context.clearRect(0,0,300,400);
+			context.drawImage(img,100,y);
+			y ++;
+
+		}
+		// img.onload = function(){
+			setInterval(drawImage,10)
+		//}
+
+		// 图片，坐标
+		canvas.onmousemove = function(event){
+			// console.log(event)
+			console.log("鼠标处于画布中的X坐标：" + event.offsetX)
+			console.log(event.offsetY)
+		}
+
+
+	</script>
+</body>
+</html>

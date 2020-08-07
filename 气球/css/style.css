@@ -1,0 +1,150 @@
+:root{
+	--w:140px;
+	--half:calc(var(--w) / 2);
+}
+
+body{
+	margin: 0;
+	background: #dfd3c3 url(../images/bg.svg);
+}
+#wrap{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.balloon{
+	width: var(--w);
+	height: var(--w);
+
+	background: green;
+	border-radius: var(--half) var(--half) 0 var(--half);
+	/* transform是从后往前执行 */
+	transform: rotate(45deg) translate(100vh,100vh);
+	/* transform: translate(10vh,10vh) rotate(45deg); */
+
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.balloon h2{
+	color: #fff;
+	font-size: 50px;
+	transform: rotate(-45deg);
+}
+.balloon:before{
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: -10px;
+	right: -10px;
+	transform: rotate(45deg);
+
+	border: 20px solid;
+	border-color: transparent #000 transparent transparent;
+}
+.balloon:nth-child(1){
+	background: rgba(182, 15, 97, 0.7);
+	box-shadow: inset 10px 10px 10px rgba(135,11,72,0.7);
+
+	/* animation-fill-mode: forwards; */
+	animation: rise 2s forwards,fly1 6s 2s ease-in-out infinite;
+}
+.balloon:nth-child(1):before{
+	border-color: transparent rgba(182, 15, 97, 0.7) transparent transparent;
+}
+.balloon:nth-child(2){
+	background: rgba(45,181,167,0.7);
+	box-shadow: inset 10px 10px 10px rgba(35,140,129,0.7);
+
+	animation: rise 3s forwards,fly4 6s 3s ease-in-out infinite;
+}
+.balloon:nth-child(2):before{
+	border-color: transparent rgba(45,181,167,0.7) transparent transparent;
+}
+.balloon:nth-child(3){
+	background: rgba(190,61,244,0.7);
+	box-shadow: inset 10px 10px 10px rgba(173,14,240,0.7);
+
+	animation: rise 1s forwards,fly1 5s 1s ease-in-out infinite;
+}
+.balloon:nth-child(3):before{
+	border-color: transparent rgba(190,61,244,0.7) transparent transparent;
+}
+.balloon:nth-child(4){
+	background: rgba(180,224,67,0.7);
+	box-shadow: inset 10px 10px 10px rgba(158,206,34,0.7);
+
+	animation: rise 2s forwards,fly3 5s 2s ease-in-out infinite;
+}
+.balloon:nth-child(4):before{
+	border-color: transparent rgba(180,224,67,0.7) transparent transparent;
+}
+.balloon:nth-child(5){
+	background: rgba(242,194,58,0.7);
+	box-shadow: inset 10px 10px 10px rgba(234,177,15,0.7);
+
+	animation: rise 4s forwards,fly2 4s 4s ease-in-out infinite;
+}
+.balloon:nth-child(5):before{
+	border-color: transparent rgba(242,194,58,0.7) transparent transparent;
+}
+.balloon:nth-child(6){
+	background: rgba(242,112,45,0.7);
+	box-shadow: inset 10px 10px 10px rgba(222,85,14,0.7);
+
+	animation: rise 3s forwards,fly2 6s 5s ease-in-out infinite;
+}
+.balloon:nth-child(6):before{
+	border-color: transparent rgba(242,112,45,0.7) transparent transparent;
+}
+
+/* 气球上升 */
+@keyframes rise{
+	100%{
+		transform: rotate(45deg) translate(0,0);
+	}
+}
+
+/* 气球运动轨迹，4种 */
+@keyframes fly1{
+	0%,100%{
+		transform: rotate(45deg) translateY(0);
+	}
+	50%{
+		transform: rotate(53deg) translateY(-20px);
+	}
+}
+
+@keyframes fly2{
+	0%,100%{
+		transform: rotate(45deg) translateY(0);
+	}
+	50%{
+		transform: rotate(37deg) translateY(-30px);
+	}
+}
+
+@keyframes fly3{
+	0%,100%{
+		transform: rotate(45deg) translateY(0);
+	}
+	50%{
+		transform: rotate(37deg) translate(-20px,-30px);
+	}
+}
+
+@keyframes fly4{
+	0%,100%{
+		transform: rotate(45deg) translateY(0);
+	}
+	50%{
+		transform: rotate(55deg) translate(-15px,-10px);
+	}
+}

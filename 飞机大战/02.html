@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			position: absolute;
+		    top: 20px;
+		    left: 200px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 
+		视频元素中的事件和属性
+
+	 -->
+	<video src="video/oceans-clip.mp4" controls="true"></video>
+	<div class="box">
+		<a href="http://www.baidu.com">
+			<img src="video/koala2.jpg" alt="" width="200px">
+		</a>	
+	</div>
+	
+	<script>
+		// 需求：
+			// 当视频正在播放中   广告消失
+			// 当视频暂停时   显示广告
+
+		var vid = document.getElementsByTagName("video")[0];
+		// vid这个对象的属性和事件
+
+
+		var box = document.getElementsByClassName("box")[0];
+		// 对应的事件
+		// play
+		// pause
+		vid.onplay = function(){
+			box.style.display = "none"
+		}
+		vid.onpause = function(){
+			box.style.display = "block"
+		}
+
+		// 拓展，广告带关闭按钮
+
+
+
+
+		// 拓展，结合手册。思考，如果不添加控制条属性，
+		// 自己手写控制条。
+		// 视频元素的属性，方法，事件
+
+
+	</script>
+</body>
+</html>
