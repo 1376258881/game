@@ -12,21 +12,18 @@
     <div id="app">
     </div>
     <button class='reset1'>复原</button>
-    <script src="min.js"></script>
-    
-   
+    <script src="tuozuai2.0.js"></script>
     <script>
         new Puzzle({
             el:'#app',  //插槽
             data:{
                 width:10,//宽
                 height:10,//高
-                row:4,         //行数
-                col:4,          //列数
+                row:3,         //行数
+                col:3,          //列数
                 puzzleImg:'https://img.hbhcdn.com/zhuanti/20881/pintu.jpg',
                 startBtn:'.reset1',
-                isReset:true,//是否初始化为 待开始状态
-                bufferTime:'.3s'
+                isReset:true//是否初始化为 待开始状态
             },
             beforeHandle(){  //初始化完成后执行
                 console.log('初始化完成')
@@ -36,7 +33,6 @@
                 console.log('拼图成功')
             }         
         })
-        console.log(Puzzle)
     </script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="px-rem-index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="start"> 开始</div>
+    <div class="wrap">
+       
+        <div class="right" id="app">
+            
+            <div class="imgArea" style="display:none"></div>
+        </div>
+    </div>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="./index_rem2.js"></script>
+    <script>
+        new Puzzle({
+            el:'#app',  //插槽
+            data:{
+                width:9,//宽  //单位rem
+                height:9,//高
+                row:3,         //行数
+                col:3,          //列数
+                puzzleImg:'./1.png',  //图片路径
+                startBtn:'.start'      //绑定触发按钮类名
+                // isReset:true
+            },
+            success(){
+                // 拼图成功后的回调
+                console.log('拼图成功')
+            }         
+        })
+    </script>
+</body>
+</html>

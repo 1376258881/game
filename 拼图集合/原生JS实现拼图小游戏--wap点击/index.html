@@ -3,40 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/jquery-1.11.3.min.js"></script>
     <script src="./js/px-rem-index.js"></script>
-    <link rel="stylesheet" href="./tuozhuai.css">
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
     <title>Document</title>
 </head>
 <body style="width: 15rem; margin-left: auto; margin-right: auto; position: relative;">
     <div id="app">
+
     </div>
-    <button class='reset1'>复原</button>
-    <script src="min.js"></script>
-    
-   
+    <button class='reset'>复原</button>
+    <script src="./js/index.js"></script>
     <script>
         new Puzzle({
             el:'#app',  //插槽
             data:{
                 width:10,//宽
                 height:10,//高
-                row:4,         //行数
-                col:4,          //列数
-                puzzleImg:'https://img.hbhcdn.com/zhuanti/20881/pintu.jpg',
-                startBtn:'.reset1',
-                isReset:true,//是否初始化为 待开始状态
-                bufferTime:'.3s'
-            },
-            beforeHandle(){  //初始化完成后执行
-                console.log('初始化完成')
+                row:3,         //行数
+                col:3,          //列数
+                puzzleImg:'./pintu.jpg', //图片路径
+                // isReset:true
             },
             success(){
                 // 拼图成功后的回调
                 console.log('拼图成功')
             }         
         })
-        console.log(Puzzle)
     </script>
 </body>
 </html>
